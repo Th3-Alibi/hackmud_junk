@@ -3,7 +3,7 @@ function(c, a) {
         dPa = #fs.nuutec.public({"open":"plan"}),
         rePr = /(date for|continues on|of the|developments on) ([a-z0-9_]+(.sh|.exe)?)/ig,
         rePa = /(strategy )([a-z0-9_]+)/ig,
-        reTs = /(\w+\_\w+\.\w+\_\w+)/ig,
+        reTs = /(\w+\.\w+)/ig,
         m,
         prs = [],
         pas = [],
