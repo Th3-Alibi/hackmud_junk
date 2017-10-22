@@ -1,9 +1,9 @@
-function (c, a) // t:#s.username.target
+function (c, a) // t:#fs.username.target
 {
     // Handle the case with no arguments passed.
     if (a == null) {
         // Get all FULLSEC targets.
-        var f = #s.scripts.fullsec();
+        var f = #fs.scripts.fullsec();
 
         // Get the publics and entries.
         var l = f.filter(function(v){
@@ -15,7 +15,7 @@ function (c, a) // t:#s.username.target
         })
 
         return {
-            usage: "harvest{t:#s.user.target}",
+            usage: "harvest{t:#fs.user.target}",
             fullsec_targets: l
         }
     }
@@ -94,15 +94,15 @@ function (c, a) // t:#s.username.target
         out.forEach(function(e){
             // Make prefer unidentified entries (they seem to have more success).
             if (e && e.includes(".") && e.includes("_")) {
-                ts.push(e)
+                ts.push("th3alibi.cracker {t:#s."+e+"}")
             }
         })
-        if (ts.length > 0) {
-            var safety = #s.scripts.get_level({ name: ts[0] })
-            if (safety != "FULLSEC") {
-                return "STOP. THIS IS MALICOUS."
-            }
-        }
+//        if (ts.length > 0) {
+//            var safety = #fs.scripts.get_level({ name: ts[0] })
+//            if (safety != "FULLSEC") {
+//                return "STOP. THIS IS MALICOUS."
+//            }
+//        }
     })
 
     return ts
